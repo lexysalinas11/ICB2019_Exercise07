@@ -10,3 +10,11 @@ only.odd <- function(x){
 
 #example using iris.csv
 only.odd(iris) #can use function for any data frame in ()
+
+#2.2 get rows with Sepal.Width
+sepalwidth <- function(x,value){
+  x[which(x[,"Sepal.Width"]>value),]
+}
+
+#example
+sepalwidth(iris,3)
