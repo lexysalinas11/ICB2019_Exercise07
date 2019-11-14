@@ -1,3 +1,4 @@
+#Alexa Salinas and Camille Mosley 
 #Exercise 7 - Custom functions in R 
 #1. Write a function 
 iris <- read.csv("iris.csv", header = T, stringsAsFactors = F)
@@ -13,7 +14,7 @@ only.odd(iris) #can use function for any data frame in ()
 
 #2.1 # of obs for given species 
 species.obs<-function(species){
-  speciesobs <- (iris$Species==species)
+  speciesobs <- (iris$Species==species) 
   return(sum(speciesobs==T))
 }
 
@@ -28,3 +29,14 @@ sepalwidth <- function(x,value){
 #example
 sepalwidth(iris,3)
 
+#2.3 data for given species to csv file w given species name as file name
+#Hint: look at paste() to add .csv extension to file in for loop
+species.outputs <- function(species){
+  speciesobs <- iris[iris$Species==species,]
+  write.csv(speciesobs, file = paste(species, ".csv", sep=""))
+}
+
+#to get outputs for each of the 3 species 
+species.outputs("virginica")
+species.outputs("versicolor")
+species.outputs("setosa")
