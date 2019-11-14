@@ -1,5 +1,5 @@
 #Alexa Salinas and Camille Mosley 
-#Exercise 7 - Custom functions in R 
+#Exercise 7 Custom functions in R 
 #1. Write a function 
 iris <- read.csv("iris.csv", header = T, stringsAsFactors = F)
 
