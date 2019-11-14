@@ -11,6 +11,15 @@ only.odd <- function(x){
 #example using iris.csv
 only.odd(iris) #can use function for any data frame in ()
 
+#2.1 # of obs for given species 
+species.obs<-function(species){
+  speciesobs <- (iris$Species==species)
+  return(sum(speciesobs==T))
+}
+
+#example
+species.obs('versicolor')
+
 #2.2 get rows with Sepal.Width
 sepalwidth <- function(x,value){
   x[which(x[,"Sepal.Width"]>value),]
@@ -18,3 +27,4 @@ sepalwidth <- function(x,value){
 
 #example
 sepalwidth(iris,3)
+
